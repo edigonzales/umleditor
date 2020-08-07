@@ -32,7 +32,7 @@ import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 import javax.swing.event.InternalFrameListener;
 
-import com.jtattoo.plaf.acryl.AcrylLookAndFeel;
+//import com.jtattoo.plaf.acryl.AcrylLookAndFeel;
 
 import CH.ifa.draw.contrib.MDIDesktopPane;
 import CH.ifa.draw.framework.Drawing;
@@ -48,6 +48,9 @@ import CH.ifa.draw.util.PaletteListener;
 import CH.ifa.draw.util.UndoManager;
 import ch.ehi.basics.logging.EhiLogger;
 import ch.ehi.basics.types.NlsString;
+
+import com.formdev.flatlaf.FlatLightLaf;
+
 /* This file is part of the UML/INTERLIS-Editor.
  * For more information, please see <http://www.umleditor.org/>.
  *
@@ -3762,6 +3765,9 @@ public class LauncherView extends BaseFrame implements MetaModelListener, Drawin
 	 * @param args java.lang.String[] @see Tracer.start(String[])
 	 */
 	public static void main(java.lang.String[] args) {
+		FlatLightLaf.install();
+
+
 		try {
 			Tracer.start(args);
 
@@ -4499,17 +4505,23 @@ public class LauncherView extends BaseFrame implements MetaModelListener, Drawin
 	}
 
 	/**
-	 * Set a theme by default (try modernizing look and feel)
-	 */
+	* Overwrites
+	*/
 	protected void setLookAndFeel(String style) {
-		super.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
-		Properties props = new Properties();
+		super.setLookAndFeel(style);
 
-		props.put("logoString", "*");// mine
-		AcrylLookAndFeel.setCurrentTheme(props);// mine
 		// keep Settings in Profile
-		getSettings().setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
+		getSettings().setLookAndFeel(style);
+
+
+
+		//super.setLookAndFeel(com.formdev.flatlaf.FlatIntelliJLaf.class.getName());
+		//Properties props = new Properties();
+
+		//props.put("logoString", "*");
+		//getSettings().setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
 	}
+
 
 	private void setModellingLanguage(String lang) {
 		TaggedValue defLangTag = null;
