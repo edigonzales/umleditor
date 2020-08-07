@@ -10,5 +10,5 @@ jdeps --class-path '*' --multi-release base -recursive --ignore-missing-deps --p
 ```
 
 ```
-jpackage --icon icon-umleditor-v2-128x128.icns --name umleditor --type dmg --input . --main-jar umleditor.jar -d output --runtime-image umleditor-jre --app-version 3.6.6
+jpackage --icon icon-umleditor-v2-128x128.icns --name umleditor --type pkg --input . --main-jar umleditor.jar -d output --runtime-image umleditor-jre --app-version 3.6.6
 ```
