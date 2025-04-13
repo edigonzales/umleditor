@@ -3271,6 +3271,9 @@ public void log(String id, String title, String logText) {
  * @param args java.lang.String[] @see Tracer.start(String[])
  */
 public static void main(java.lang.String[] args) {
+com.formdev.flatlaf.FlatLightLaf.setup();
+
+
 	try {
 		Tracer.start(args);
 
@@ -3299,7 +3302,7 @@ public static void main(java.lang.String[] args) {
 		}
 		instance.logListener=new LogListener(instance.getPnlLog());
 		EhiLogger.getInstance().addListener(instance.logListener);
-		instance.setLookAndFeel(getSettings().getLookAndFeel());
+		//instance.setLookAndFeel(getSettings().getLookAndFeel());
 	//TODO patch: setModel(..)->openDiagram would be too early here
 	instance.setCurrentFile(null);
 	instance.setModel(null /*, null*/);

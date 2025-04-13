@@ -87,6 +87,7 @@ sourceSets {
 } 
 
 dependencies {
+implementation 'com.formdev:flatlaf:3.6'
     implementation name:  'jh'
     implementation name:  'jhotdraw53'
     implementation name:  'sebase'
